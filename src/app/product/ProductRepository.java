@@ -13,7 +13,6 @@ public class ProductRepository {
             new Side(4, "어니언링", 1000, 300, 1),
             new Drink(5, "코카콜라", 1000, 200, true),
             new Drink(6, "제로콜라", 1000, 0, true)
-
     };
 
 }
