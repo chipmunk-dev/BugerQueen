@@ -47,4 +47,9 @@ public class Product {
     public void setKcal(int kcal) {
         this.kcal = kcal;
     }
+
+    @Override
+    public String toString() {
+        return String.format("(%d) %s %5dKcal %5d원", id, name, kcal, price);
+    }
 }
