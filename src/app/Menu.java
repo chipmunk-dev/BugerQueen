@@ -17,9 +17,9 @@ public class Menu {
         System.out.println("[👇] Menu");
         System.out.println("-".repeat(66));
 
-        printHamburger();
-        printSide();
-        printDrink();
+        printHamburger(true);
+        printSide(true);
+        printDrink(true);
 
         System.out.println();
         System.out.println("🛒 (0) Cart");
@@ -28,34 +28,51 @@ public class Menu {
         System.out.print("[📣] 메뉴를 선택해주세요: ");
     }
 
-    private void printDrink() {
+    public void printDrink(boolean printPrice) {
         System.out.println("🥤 Drink");
         for(Product product : products) {
             if(product instanceof Drink) {
-                System.out.println(product.toString());
+                printEachMenu(product, false);
             }
         }
         System.out.println();
     }
 
-    private void printSide() {
+    public void printSide(boolean printPrice) {
         System.out.println("🍟 Side");
         for(Product product : products) {
             if(product instanceof Side) {
-                System.out.println(product.toString());
+                printEachMenu(product, printPrice);
             }
         }
         System.out.println();
     }
 
-    private void printHamburger() {
+    private void printHamburger(boolean printPrice) {
         System.out.println("🍔 Hamburger");
         for(Product product : products) {
             if(product instanceof Hamburger) {
-                System.out.println(product.toString());
+                printEachMenu(product, printPrice);
             }
         }
         System.out.println();
+    }
+
+    private static void printEachMenu(Product product, boolean printPrice) {
+        if(printPrice) {
+            System.out.printf("(%d) %s %5dKcal %5d원\n",
+                    product.getId(),
+                    product.getName(),
+                    product.getKcal(),
+                    product.getPrice()
+            );
+        } else {
+            System.out.printf("(%d) %s %5dKcal\n",
+                    product.getId(),
+                    product.getName(),
+                    product.getKcal()
+            );
+        }
     }
 
 }
