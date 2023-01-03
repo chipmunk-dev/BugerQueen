@@ -1,6 +1,6 @@
 package app.discount.discountpolicy;
 
-public class FixedAmountDiscountPolicy {
+public class FixedAmountDiscountPolicy implements DiscountPolicy {
 
     private final int discountAmount;
 

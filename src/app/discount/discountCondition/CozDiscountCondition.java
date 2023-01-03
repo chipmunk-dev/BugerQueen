@@ -1,13 +1,18 @@
 package app.discount.discountCondition;
 
+import app.discount.discountpolicy.DiscountPolicy;
 import app.discount.discountpolicy.FixedRateDiscountPolicy;
 
 import java.util.Scanner;
 
-public class CozDiscountCondition {
+public class CozDiscountCondition implements DiscountCondition {
 
-    private FixedRateDiscountPolicy discountPolicy = new FixedRateDiscountPolicy(10);
+    private DiscountPolicy discountPolicy;
     private boolean isSatisfied;
+
+    public CozDiscountCondition(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
 
     public boolean isSatisfied() {
         return isSatisfied;
