@@ -18,4 +18,14 @@ public class ProductRepository {
     public Product[] getAllProducts() {
         return products;
     }
+
+    public Product findById(int productId) {
+        for(Product product: products) {
+            if(product.getId() == productId) {
+                return product;
+            }
+        }
+
+        return null;
+    }
 }
