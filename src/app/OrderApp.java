@@ -14,6 +14,7 @@ public class OrderApp {
         Product[] products = productRepository.getAllProducts();
         Menu menu = new Menu(products);
         Cart cart = new Cart(productRepository, menu);
+        Order order = new Order(cart);
 
         System.out.println("🍟 BurgerQueen Order Service");
 
@@ -22,6 +23,7 @@ public class OrderApp {
             String input = scanner.nextLine();
 
             if(input.equals("+")) {
+                order.makeOption();
                 break;
             } else {
                 int menuNumber = Integer.parseInt(input);
