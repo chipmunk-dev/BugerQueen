@@ -43,7 +43,7 @@ public class OrderApp {
 
                 if(menuNumber == 0) {
                     cart.printCart();
-                } else if (menuNumber >= 1 && menuNumber <= products.length) {
+                } else if (menuNumber >= 1 && menuNumber <= productRepository.getAllProducts().length) {
                     cart.addToCart(menuNumber);
                 }
             }
